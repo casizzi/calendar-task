@@ -1,0 +1,71 @@
+@import "./../../styles/settings/brand-colours"
+
+.calendar-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: $brand-white
+    padding: 1.8rem
+
+.calendar
+    &__month-name
+        text-align: center
+        color: $brand-blue-500
+    &__grid
+        $grid-gap: 0.4rem
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        grid-column-gap: $grid-gap
+        grid-row-gap: $grid-gap
+        margin-top: $grid-gap
+        li
+            text-align: center
+            height: 3.5rem
+            line-height: 3.5rem
+            width: 3.5rem
+
+    &__day, &__date
+        border: 1px solid transparent
+    &__day
+        color: $brand-blue-500
+        border-color: transparent
+    &__date
+        &--available
+            color: $brand-red-400
+            border-color: $brand-red-400
+            transition: all 0.25s ease
+            &:hover
+                cursor: pointer
+                color: $brand-white
+                background: $brand-red-300
+                transition: all 0.25s ease
+        &--selected
+            pointer-events: none
+            color: $brand-white
+            background: $brand-red-400
+            transition: all 0.25s ease
+        &--unavailable
+            pointer-events: none
+            color: $grey-400
+            border-color: $grey-200
+            background: $grey-200
+    
+    &__ctas
+        display: flex
+        align-items: center
+        margin-top: 1.4rem        
+        &__cancel, .button
+            margin: 0 1rem
+        &__cancel
+            font-family: "cooperhewitt", helvetica, arial, sans-serif
+            text-align: center
+            font-weight: 500
+            font-size: 1.2rem
+            line-height: 1.4rem
+            color: $grey-500
+            max-width: 84px
+            transition: all 0.25s ease
+            &:hover
+                cursor: pointer
+                color: $brand-red-400
+                transition: all 0.25s ease

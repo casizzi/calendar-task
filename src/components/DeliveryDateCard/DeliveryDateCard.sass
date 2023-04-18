@@ -1,0 +1,103 @@
+@import "./../../styles/settings/brand-colours"
+@import "./../../styles/settings/typography"
+
+.delivery-date-card
+    position: relative
+    display: flex
+    justify-content: space-between
+    background: $brand-white
+    padding: 1rem
+    border-radius: 2px
+    overflow: hidden
+
+    &:before 
+        content: ''
+        position: absolute
+        top: 50%
+        right: -75px
+        transform: translateY(-50%)
+        height: 150px
+        width: 150px
+        border-radius: 50%
+        background: $brand-blue-200
+        transition: transform 0.4s ease
+
+    &:hover 
+        cursor: pointer
+        &:before 
+            transform: scale(6)
+            transition: transform 0.4s ease
+
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: center
+        z-index: 1
+
+    &__earliest-delivery
+        position: relative
+        display: block
+        font-family: "gt-pressura-regular", helvetica, arial, sans-serif
+        font-weight: 300
+        font-size: 1.2rem
+        line-height: 1.4rem
+        border-radius: 4px
+        background: $success-green-100
+        padding: 0.5rem 0.5rem 0.5rem 2.6rem
+        margin-top: 0.5rem
+        &:before 
+            position: absolute
+            top: 50%
+            left: 2px
+            transform: translateY(-50%)
+            display: inline-block
+            content: ''
+            background-image: url('./../../assetts/images/van.svg')
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            height: 1.4rem
+            width: 2.4rem
+
+    &__change-date
+        position: relative
+        display: flex
+        flex-direction: column
+        &__copy 
+            position: relative
+            font-family: "gt-pressura-regular", helvetica, arial, sans-serif
+            font-weight: 300
+            font-size: 1.2rem
+            padding-top: 0.2rem
+            &:after 
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 0.1rem
+                background-color: $brand-blue-500
+    
+    &__calendar
+        position: relative
+        height: 2.6rem
+        font-family: "gt-pressura-regular", helvetica, arial, sans-serif
+        font-weight: 300
+        font-size: 1.2rem
+        line-height: 3.5rem
+        text-align: center
+        &:before 
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate3d(-50%, -50%, 0)
+            display: inline-block
+            content: ''
+            background-image: url('./../../assetts/images/calendar.svg')
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            height: 2.8rem
+            width: 2.8rem
+
+  
